@@ -5,6 +5,14 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cronos402/sdk.git"
+  },
+  "homepage": "https://cronos402.dev",
+  "bugs": {
+    "url": "https://github.com/Cronos402/sdk/issues"
+  },
   "bin": {
     "cronos402": "dist/cli/index.js"
   },
