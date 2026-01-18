@@ -65,20 +65,25 @@ program
 
       // Determine if we're using proxy mode or direct mode
       // API keys can be used with any proxy endpoint
-      const isProxyMode = apiKey && serverUrls.some(url =>
-        url.includes('/v1/mcp') || url.includes('cronos402') || url.includes('proxy')
-      );
+      // Check for: /mcp path, /v1/mcp, cronos402, or proxy in URL
+      const isProxyMode = apiKey && serverUrls.some(url => {
+        const urlObj = new URL(url);
+        return urlObj.pathname.includes('/mcp') ||
+               url.includes('cronos402') ||
+               url.includes('proxy');
+      });
 
       // API key can only be used with proxy mode
       if (apiKey && !isProxyMode) {
-        console.error('Error: API key can only be used with proxy URLs (containing /v1/mcp, cronos402, or proxy). Use --evm for direct payments to other servers.');
+        console.error('Error: API key can only be used with proxy URLs (containing /mcp, cronos402, or proxy). Use --evm for direct payments to other servers.');
         process.exit(1);
       }
 
       // Create individual server connections with appropriate transport options
       // Only apply API key authentication to proxy URLs
       const serverConnections = serverUrls.map(url => {
-        const isProxyUrl = url.includes('/v1/mcp') || url.includes('cronos402') || url.includes('proxy');
+        const urlObj = new URL(url);
+        const isProxyUrl = urlObj.pathname.includes('/mcp') || url.includes('cronos402') || url.includes('proxy');
         
         let transportOptions: any = undefined;
         if (apiKey && isProxyUrl) {
@@ -100,9 +105,10 @@ program
         };
       });
 
-      // Optional X402 client configuration (only when not using API key)
+      // Optional X402 client configuration for direct payments
+      // Can be used with or without API key (API key is for auth, EVM is for payments)
       let x402ClientConfig: X402ClientConfig | undefined = undefined;
-      if (!apiKey && privateKey) {
+      if (privateKey) {
         const pk = privateKey.trim();
         if (!pk.startsWith('0x') || pk.length !== 66) {
           console.error('Error: Invalid private key. Must be 0x-prefixed 64-character hex string.');
