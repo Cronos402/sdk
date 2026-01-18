@@ -1,4 +1,4 @@
-# mcpay
+# cronos402
 
 ## 0.1.17
 
@@ -35,13 +35,13 @@
 ### Patch Changes
 
 - yup
-- Release mcpay js-sdk
+- Release cronos402 js-sdk
 
 ## 0.1.13-beta.0
 
 ### Patch Changes
 
-- Release mcpay js-sdk
+- Release cronos402 js-sdk
 
 ## 0.1.9
 
@@ -53,10 +53,10 @@
 
 ### Patch Changes
 
-- 383a939: Release mcpay js-sdk beta
+- 383a939: Release cronos402 js-sdk beta
 
 ## 0.1.7-beta.5
 
 ### Patch Changes
 
-- Release mcpay js-sdk beta
+- Release cronos402 js-sdk beta

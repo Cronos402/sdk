@@ -37,15 +37,9 @@ export class AnalyticsHook implements Hook {
         console.log("[AnalyticsHook] processCallToolResult called", { res, req, extra });
         try {
             // Deep clone the response to ensure we capture its state at this moment
-            // This is important because hooks execute in reverse order, and we want to capture
-            // the final response after all hooks (like VLayerHook) have modified it
             const clonedRes = JSON.parse(JSON.stringify(res)) as CallToolResult;
             const clonedReq = JSON.parse(JSON.stringify(req)) as CallToolRequest;
-            
-            // Log if proof is present in the response
-            const hasProof = clonedRes._meta && typeof clonedRes._meta === 'object' && 'vlayer/proof' in clonedRes._meta;
-            console.log("[AnalyticsHook] Storing response with proof:", hasProof, hasProof ? "Proof present" : "No proof");
-            
+
             this.sink({
                 request_id: extra?.requestId,
                 server_id: extra?.serverId,
