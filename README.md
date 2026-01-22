@@ -1,20 +1,27 @@
+![Cronos402 Logo](https://raw.githubusercontent.com/Cronos402/assets/main/Cronos402-logo-light.svg)
+
 # Cronos402 SDK & CLI
 
 **The first MCP payment gateway built exclusively for Cronos blockchain.**
 
+[![npm version](https://img.shields.io/npm/v/cronos402.svg)](https://www.npmjs.com/package/cronos402)
+[![npm downloads](https://img.shields.io/npm/dm/cronos402.svg)](https://www.npmjs.com/package/cronos402)
+
 A TypeScript SDK and CLI for connecting to MCP (Model Context Protocol) servers with payment capabilities via the x402 protocol on Cronos. Build AI agents and MCP servers that accept payments in USDC.e and CRO.
+
+**Package**: [npmjs.com/package/cronos402](https://www.npmjs.com/package/cronos402)
 
 ## Features
 
-- 🔥 **Cronos-native**: Built exclusively for Cronos Mainnet and Testnet
-- 🔌 **Multi-server Proxy**: Connect to multiple MCP servers at once
-- 💸 **USDC.e Support**: Gasless payments via Cronos facilitator (EIP-3009)
-- ⚡ **Native CRO**: Direct CRO payments with user-controlled gas
-- 💳 **402 Payment Required**: Automatic payment handling via x402 protocol
-- 🤖 **MCP Integration**: Full Model Context Protocol server and client support
-- 📦 **Programmatic APIs**: For both clients and servers
-- 🛠️ **Easy SDK**: Simple `paidTool` API for building paid tools
-- 🔐 **Type-safe**: Full TypeScript support with viem
+- **Cronos-native**: Built exclusively for Cronos Mainnet and Testnet
+- **Multi-server Proxy**: Connect to multiple MCP servers at once
+- **USDC.e Support**: Gasless payments via Cronos facilitator (EIP-3009)
+- **Native CRO**: Direct CRO payments with user-controlled gas
+- **402 Payment Required**: Automatic payment handling via x402 protocol
+- **MCP Integration**: Full Model Context Protocol server and client support
+- **Programmatic APIs**: For both clients and servers
+- **Easy SDK**: Simple `paidTool` API for building paid tools
+- **Type-safe**: Full TypeScript support with viem
 
 ## Quick Start
 
@@ -560,6 +567,9 @@ pnpm run dev
 
 ## Resources
 
+- **npm Package**: [npmjs.com/package/cronos402](https://www.npmjs.com/package/cronos402)
+- **Documentation**: [docs.cronos402.dev](https://docs.cronos402.dev)
+- **GitHub**: [github.com/Cronos402/sdk](https://github.com/Cronos402/sdk)
 - [Cronos x402 Facilitator Docs](https://docs.cronos.org/cronos-x402-facilitator)
 - [Model Context Protocol](https://modelcontextprotocol.io)
 - [EIP-3009: Transfer With Authorization](https://eips.ethereum.org/EIPS/eip-3009)
