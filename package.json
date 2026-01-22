@@ -1,6 +1,6 @@
 {
   "name": "cronos402",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "First MCP payment gateway for Cronos blockchain - Pay for AI services with USDC.e or CRO",
   "type": "module",
   "main": "dist/index.js",
